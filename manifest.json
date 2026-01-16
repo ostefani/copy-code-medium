@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Copy Code from Medium articles",
+    "short_name": "Copy Code from Medium",
+    "version": "1.0.0",
+    "description": "Add copy buttons to code blocks on Medium articles",
+    "permissions": [],
+    "host_permissions": [],
+    "content_scripts": [
+        {
+            "matches": ["https://medium.com/*", "https://*.medium.com/*"],
+            "js": ["src/content/content.js"],
+
+            "run_at": "document_idle"
+        }
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    }
+}
