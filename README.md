@@ -48,9 +48,11 @@ If you use this code in your own project, please credit the original author: [Ol
 
 Pull requests welcome! Please:
 
+-   Create dedicated feature branch
 -   Test on multiple Medium articles
 -   Follow existing code style
 -   Update README for new features
+-   Create PR
 
 ## Support
 
