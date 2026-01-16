@@ -44,6 +44,10 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 
 If you use this code in your own project, please credit the original author: [Olha Stefanishyna](https://github.com/ostefani).
 
+## Privacy
+
+Read full document at [Privacy](https://ostefani.github.io/copy-code-medium/privacy.html)
+
 ## Contributing
 
 Pull requests welcome! Please:
