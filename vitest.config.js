@@ -4,11 +4,11 @@ import path from 'path';
 export default defineConfig({
     test: {
         environment: 'jsdom',
-        setupFiles: './src/test/setup.js',
+        setupFiles: './test/setup.js',
         coverage: {
             provider: 'v8',
             reporter: ['text', 'html'],
-            exclude: ['node_modules/', 'src/test/', '*.config.js', 'dist/'],
+            exclude: ['node_modules/', './test/', '*.config.js', 'dist/'],
         },
     },
     resolve: {
