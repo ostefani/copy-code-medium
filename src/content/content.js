@@ -15,7 +15,7 @@ import buttonHTML from './copy-button.html?raw';
 const sheet = new CSSStyleSheet();
 sheet.replaceSync(copyButtonStyles);
 
-function addButtonToBlock(targetContainer, templateHtml, sheet) {
+export function addButtonToBlock(targetContainer, templateHtml, sheet) {
     if (targetContainer.getAttribute(CONFIG.processedAttr) === '1') return;
 
     targetContainer.setAttribute(CONFIG.processedAttr, '1');
@@ -34,8 +34,8 @@ function addButtonToBlock(targetContainer, templateHtml, sheet) {
     const clone = templateHtml.content.cloneNode(true);
 
     // Set up button click handler
-    const button = clone.querySelector(CONFIG.buttonClass);
-    const statusNode = clone.querySelector(CONFIG.screenReadersClass);
+    const button = clone.querySelector(`.${CONFIG.buttonClass}`);
+    const statusNode = clone.querySelector(`.${CONFIG.screenReadersClass}`);
 
     button.addEventListener('click', async (e) => {
         e.preventDefault();
