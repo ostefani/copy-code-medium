@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
-vi.mock('../content/utils', async () => {
+vi.mock('@/content/utils', async () => {
     const actual = await vi.importActual('@/content/utils');
     return {
         ...actual,
@@ -8,11 +8,11 @@ vi.mock('../content/utils', async () => {
     };
 });
 
-vi.mock('./content.css?raw', () => ({
+vi.mock('@/content.css?raw', () => ({
     default: '.medium-copy-btn { position: absolute; }',
 }));
 
-vi.mock('./copy-button.html?raw', () => ({
+vi.mock('@/content/copy-button.html?raw', () => ({
     default: '<button class="medium-copy-btn">Copy</button><span class="sr-only"></span>',
 }));
 
