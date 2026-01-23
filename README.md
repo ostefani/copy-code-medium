@@ -2,9 +2,12 @@
 
 A lightweight Chrome extension that adds copy buttons to code blocks on Medium articles.
 
+<img width="684" height="414" alt="extension-screenshot" src="https://github.com/user-attachments/assets/4178d19e-b132-4895-9b11-522a84e5bb47" />
+
 ## Installation for Development
 
 1. Make sure you have Node.js installed
+
 2. Run: `npm install`
 3. Run: `npm run build`
 4. Download or clone this repository
