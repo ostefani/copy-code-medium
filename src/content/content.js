@@ -15,7 +15,7 @@ import buttonHTML from './copy-button.html?raw';
 // Catch block for FF
 function applyStyles(shadowRoot, sheet) {
     try {
-        shadowRoot.adoptedStyleSheets.push(sheet);
+        shadowRoot.adoptedStyleSheets = [sheet];
     } catch (e) {
         const style = document.createElement('style');
         style.textContent = copyButtonStyles;
