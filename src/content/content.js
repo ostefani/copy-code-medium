@@ -12,8 +12,16 @@ import { CONFIG } from './config';
 import copyButtonStyles from './content.css?raw';
 import buttonHTML from './copy-button.html?raw';
 
-const sheet = new CSSStyleSheet();
-sheet.replaceSync(copyButtonStyles);
+// Catch block for FF
+function applyStyles(shadowRoot, sheet) {
+    try {
+        shadowRoot.adoptedStyleSheets.push(sheet);
+    } catch (e) {
+        const style = document.createElement('style');
+        style.textContent = copyButtonStyles;
+        shadowRoot.appendChild(style);
+    }
+}
 
 export function addButtonToBlock(targetContainer, templateHtml, sheet) {
     if (targetContainer.getAttribute(CONFIG.processedAttr) === '1') return;
@@ -29,7 +37,7 @@ export function addButtonToBlock(targetContainer, templateHtml, sheet) {
     host.className = CONFIG.shadowHostClass;
     const shadowRoot = host.attachShadow({ mode: 'open' });
 
-    shadowRoot.adoptedStyleSheets = [sheet];
+    applyStyles(shadowRoot, sheet);
 
     const clone = templateHtml.content.cloneNode(true);
 
@@ -52,7 +60,6 @@ export function addButtonToBlock(targetContainer, templateHtml, sheet) {
 
         setTimeout(() => {
             button.classList.remove(CONFIG.copiedClass);
-
             if (statusNode) statusNode.textContent = '';
         }, CONFIG.copiedTimeout);
     });
@@ -78,6 +85,9 @@ async function init() {
         console.warn("Unsupported environment, Medium Copy Button won't run");
         return;
     }
+
+    const sheet = new CSSStyleSheet();
+    sheet.replaceSync(copyButtonStyles);
 
     const template = document.createElement('template');
     template.innerHTML = buttonHTML;
