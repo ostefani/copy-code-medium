@@ -1,6 +1,6 @@
 {
     "name": "copy-code-medium",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Chrome extension to add copy buttons to Medium code blocks",
     "scripts": {
         "dev": "vite",
