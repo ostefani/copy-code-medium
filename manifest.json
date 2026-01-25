@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Copy Code from Medium articles",
     "short_name": "Copy Code from Medium",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Add copy buttons to code blocks on Medium articles",
     "permissions": [],
     "host_permissions": [],

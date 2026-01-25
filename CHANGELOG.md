@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
+## [1.0.2] - 2026-01-25
+
+### Changed
+
+- Updated icons
+
 ## [1.0.1] - 2026-01-23
 
 ### Added
